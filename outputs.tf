@@ -1,4 +1,4 @@
-#----ec2_instances/outputs.tf----
+#----deploy_jenkins/outputs.tf----
 
 resource "local_file" "ansible_hosts" {
   content = <<HOSTS

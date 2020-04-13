@@ -83,11 +83,11 @@ do
 	    java -jar binaries/jenkins-cli.jar -auth admin:"${INIT_PASSWORD}" -s "${JENKINS_URL}" -webSocket create-job wp_custom_docker < jenkins_files/wp_custom_docker.xml
 
 
-            # Delete the Jenkins Env File
+            # Delete the Jenkins Env File and AWS/Gitlab Credentials
             rm /tmp/jenkins.env
+	    rm jenkins_files/aws_credentials.xml jenkins_files/gitlab_registry.xml
 
-    else
         exit 0
-    fi
+   fi 
 done
 

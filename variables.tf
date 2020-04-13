@@ -1,4 +1,4 @@
-#----ec2_instances/varianles.tf----
+#----deploy_jenkins/varianles.tf----
 
 variable "aws_region" {}
 
