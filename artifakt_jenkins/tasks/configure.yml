@@ -1,14 +1,4 @@
 ---
-#- name: Copy terraform / kubectl / aws-iam-authenticator binaries
-#  copy:
-#    src: "{{ item }}"
-#    dest: "/usr/bin"
-#    mode: 0751
-#  with_items:
-#    - terraform
-#    - kubectl
-#    - aws-iam-authenticator
-
 - name: get kubectl binary
   get_url:
     url: https://storage.googleapis.com/kubernetes-release/release/v1.18.1/bin/linux/amd64/kubectl
@@ -58,19 +48,9 @@
     owner: jenkins
     group: jenkins
 
-    #- name: restart Jenkins
-    #  service:
-    #    name: jenkins
-    #    state: restarted
-    #
-    #- name: Wait for port 8080 to become open on the jenkins host
-    #  wait_for:
-    #    port: 8080
-    #    delay: 30
-    
 - name: get initialAdminPassword
   command: /bin/cat /var/lib/jenkins/secrets/initialAdminPassword
   register: initialpass
 
-- debug: msg="Please connect to http://{{ ansible_host }}:8080 and put this initial password {{ initialpass.stdout }}"
-
+- name: Create the jenkins env file
+  local_action: shell echo "export INIT_PASSWORD={{ initialpass.stdout }}\nexport JENKINS_URL=http://{{ inventory_hostname }}:8080" > /tmp/jenkins.env

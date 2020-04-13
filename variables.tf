@@ -10,3 +10,10 @@ variable "private_key_path" {}
 
 variable "instance_type" {}
 
+variable "gitlab_account" {}
+
+variable "gitlab_password" {}
+
+variable "aws_access_key_id" {}
+
+variable "aws_secret_access_key" {}
