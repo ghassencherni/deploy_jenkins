@@ -1,6 +1,6 @@
 # deploy_jenkins
 Allows to deploy / destroy Jenkins, used as orchestrator to manage pipelines : Artifakt Assessment Test
-
+The script is composed by an ansible role "artifakt_jenkins", bash and terraform.
 
 
 ## Requirements
@@ -23,7 +23,7 @@ Allows to deploy / destroy Jenkins, used as orchestrator to manage pipelines : A
 
 ## Getting Started
 
-This script allows to deploy jenkins instance, it will be used later to build AWS infrastructure on AWS and deploy new Wordpress images on EKS
+This script allows to deploy jenkins instance, it will be used later to build AWS infrastructure on AWS and deploy new Wordpress images on EKS.
 
 The script uses :
 
@@ -114,7 +114,12 @@ chmod +x ./binaries/init.sh ./binaries/destroy.sh
 
 
 
-6. After finishing installing the script, connect to Jenkins using the "admin" user and the "initial admin password" in order to run the jobs : "terraform_aws_eks", "wordpress_k8s" and "wp_custom_docker"
+6. After finishing installing the script, connect to Jenkins using the "admin" user and the "initial admin password" in order to run the jobs : "terraform_aws_eks", "wordpress_k8s" and "wp_custom_docker".
+
+7. Run the first pipeline "terraform_aws_eks": it will build all AWS resources ( VPC, RDS, EKS, Public and Private Subnets,.. )
+
+8. Run the pipeline wp_custom_docker, it will push the new Docker image (ghassen-devopstt) on Gitlab Registry and trigger wordpress_k8s pipeline that create the wordpress deployment on EKS and un the ALB ( currently only HTTP is vailable )
+
 
 ## Author Information
 
