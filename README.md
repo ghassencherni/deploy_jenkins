@@ -36,47 +36,47 @@ The script uses :
 
 ## Variables
 
-AWS region where to run our Jenkins instance
+- AWS region where to run our Jenkins instance
 
    aws_region = "eu-west-3"
 
 
-The name of the public ssh key stored in AWS
+- The name of the public ssh key stored in AWS
     
    key_name = "artifakt_key"
 
 
-The public key for ssh connection 
+- The public key for ssh connection 
 
    public_key_path = "~/.ssh/id_rsa.pub"
 
 
-The private SSH key, used by ansible to configure the Jenkins instance
+- The private SSH key, used by ansible to configure the Jenkins instance
 
    private_key_path= "~/.ssh/id_rsa"
 
 
-The size of the Jenkins instance, micro is sufficient for our deployment
+- The size of the Jenkins instance, micro is sufficient for our deployment
    
    instance_type = "t2.micro"
 
 
-Please use the default one, account name is hardcoded at this version 
+- Please use the default one, account name is hardcoded at this version 
 
    gitlab_account = "myartifakt@outlook.fr"
 
 
-Please use the default one, account name is hardcoded at this version
+- Please use the default one, account name is hardcoded at this version
 
    gitlab_password = "artifakt"
 
 
-The AWS ACCESS KEY ID
+- The AWS ACCESS KEY ID
 
    aws_access_key_id = "PUT-YOR-ACCESS-ID"
 
 
-The AWS SECRET ACCESS KEY
+- The AWS SECRET ACCESS KEY
 
    aws_secret_access_key = "PUT-YOUR-SECRET-ACCESS-KEY"
 
@@ -111,6 +111,7 @@ chmod +x ./binaries/init.sh ./binaries/destroy.sh
   - Click on “Start using Jenkins”                                   
                                                           
   - Once Jenkins is ready, press “Yes” to continue    
+
 
 
 6. After finishing installing the script, connect to Jenkins using the "admin" user and the "initial admin password" in order to run the jobs : "terraform_aws_eks", "wordpress_k8s" and "wp_custom_docker"
