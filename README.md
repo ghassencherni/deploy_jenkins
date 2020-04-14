@@ -1,7 +1,7 @@
 # deploy_jenkins
 Allows to deploy / destroy Jenkins, used as orchestrator to manage pipelines : Artifakt Assessment Test
 
-The script is composed by an ansible role "artifakt_jenkins", bash and terraform.
+The script is composed by an ansible role "artifakt_jenkins", bash and terraform scripts.
 
 
 ## Requirements
@@ -115,7 +115,7 @@ chmod +x ./binaries/init.sh ./binaries/destroy.sh
 
 
 
-6. After finishing installing the script, connect to Jenkins using the "admin" user and the "initial admin password" in order to run the jobs : "terraform_aws_eks", "wordpress_k8s" and "wp_custom_docker".
+6. After finishing installing the script, connect to Jenkins using the "admin" user and the "initial admin password" in order to run the jobs : [terraform_aws_eks](https://github.com/ghassencherni/terraform_aws_eks), [wordpress_k8s](https://github.com/ghassencherni/wordpress_k8s) and [wp_custom_docker](https://github.com/ghassencherni/wp_custom_docker).
 
 7. Run the first pipeline "terraform_aws_eks": it will build all AWS resources ( VPC, RDS, EKS, Public and Private Subnets,.. )
 
