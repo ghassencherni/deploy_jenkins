@@ -37,6 +37,8 @@ The script uses :
 
 ## Variables
 
+All variables are available on terraform.tfvars file:
+
 - AWS region where to run our Jenkins instance
 
    aws_region = "eu-west-3"
