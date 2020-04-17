@@ -37,7 +37,7 @@ The script uses :
 
 ## Variables
 
-All variables are available on terraform.tfvars file:
+All variables are available on **terraform.tfvars** file, you can keep all default values except **aws_access_key_id** and **aws_secret_access_key** variables.
 
 - AWS region where to run our Jenkins instance
 
