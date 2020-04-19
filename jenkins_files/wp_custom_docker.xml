@@ -1,9 +1,27 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <flow-definition plugin="workflow-job@2.38">
   <actions/>
-  <description></description>
+  <description>This Pipeline allows to build a customized wordpress image, pull it to the gitlab registry and trigger the wordpress_k8s</description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.5">
+	    <projectUrl>https://github.com/ghassencherni/wp_custom_docker/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>wp_version</name>
+          <description>The wordpress version to build with our new image</description>
+          <defaultValue>4.8.2</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.80">
     <scm class="hudson.plugins.git.GitSCM" plugin="git@4.2.2">
       <configVersion>2</configVersion>

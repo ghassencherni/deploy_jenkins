@@ -23,4 +23,3 @@ aws_access_key_id = "PUT-YOR-ACCESS-ID"
 
 aws_secret_access_key = "PUT-YOUR-SECRET-ACCESS-KEY"
 
-
