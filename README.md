@@ -86,6 +86,9 @@ All variables are available on **terraform.tfvars** file, you can keep all defau
 
 ## Installation Steps 
 
+* More installation details are descibed in *GHASSEN_CHARNI_WORDPRESS_EKS.pdf*
+
+
 1. git clone  https://github.com/ghassencherni/deploy_jenkins.git
 
 2. cd deploy_jenkins
